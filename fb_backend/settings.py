@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-d!z5n)egoxxychk460t195@zpc38_t86$%59omyve^m5m2n+qr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'fb_backend'
+    'fb_backend',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -78,9 +79,10 @@ TEMPLATES = [
     },
 ]
 
-CORS_ALLOWED_ORIGINS = [
-        '*',
-    ]
+# CORS_ALLOWED_ORIGINS = [
+#         'http://localhost:3000',
+#     ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 WSGI_APPLICATION = 'fb_backend.wsgi.application'
